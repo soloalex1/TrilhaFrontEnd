@@ -13,14 +13,15 @@ Nestes exercícios iremos exercitar os métodos auxiliares para array:
 Altere o código a seguir para utilizar o método `forEach` de modo que a saída permaneça a mesma.
 
 ``` javascript
-var numeros = [0,1,2,3,4,5];
-for(var i = 0; i<= numeros.length; i++) {
-    if(i % 2 === 0) {
-        console.log(i + ' é par');
-    } else {
-        console.log(i + ' é ímpar');
-    }
-}
+var numeros = [0, 1, 2, 3, 4, 5];
+
+numeros.forEach(function(i){
+	if(i % 2 === 0){
+		console.log(i + " é par");
+	} else {
+		console.log(i + " é ímpar");
+	}
+});
 
 // saída:
 // 0 é par
@@ -36,10 +37,61 @@ Utilizando o método `map`, escreva o método `dobrar` que recebe um array de n�
 
 * Exemplo: dobrar([1,2,3]) → [2,4,6]
 
+``` javascript
+var num = [0, 1, 2, 3, 4, 5];
+
+function dobrar(arr){
+	var dobro = arr.map(function(i){
+		return i * 2;
+	});
+	return dobro;
+}
+
+
+console.log("Vetor original: ");
+console.log(num);
+console.log("Novo vetor: ");
+console.log(dobro);
+
+// saída:
+// Vetor original:
+// 0
+// 1
+// 2
+// 3
+// 4
+// 5
+//
+// Novo vetor:
+// 0
+// 2
+// 4
+// 6
+// 8
+// 10
+```
+
 ## Exercício 3 - NÃO ESTOU BRAVO
 Escreva o método `caps` que recebe um array de strings e retorna um outro array com todas as strings do array original em CAIXA ALTA.
 
 * Exemplo: caps(['oi', 'tudo', 'bem?']) → ['OI', 'TUDO', 'BEM?']
+
+``` javascript
+
+function caps(words){
+	words.map(function(i){
+		let upperWord = i.toUpperCase();
+		console.log(upperWord);
+	})
+}
+
+caps(["hello", "world");
+
+//saída:
+//HELLO
+//WORLD
+
+```
 
 ## Exercício 4 - Equilibrio de parênteses
 Utilizando a função auxiliar `reduce`, escreva uma função chamada `validaParenteses` que avalia se os parênteses estão balanceados. Isso significa que, pra cada parênteses esquerdo “(“ é necessário ter um parênteses direito “)” correspondente. A função deve aceitar uma `string` e retornar um valor booleano (true ou false).
@@ -67,6 +119,18 @@ var alunos = [
   { nome: 'Roberto', media: 1.5 },
   { nome: 'Tiago', media: 6.0 }
 ];
+
+function aprovados(arr){
+	var result = arr.filter(function(aluno){
+		return aluno.media >= 7;
+	});
+	return result;
+}
+
+// saída:
+// { nome: 'Julia', media: 9.5 }
+
+
 ```
 
 * Exemplo: aprovados(alunos, 6.5) → [ { nome: 'Julia', media: 9.5 } ]
@@ -116,8 +180,30 @@ Crie uma função chamada `calculaRaizesQuadradas` que recebe um array de númer
 * para este exercício, assuma que a entrada terá somente números com raiz exata.
 * utilize a função Math.sqrt para calcular a raiz quadrada
 
+
+``` javascript
+
+var numeros = [25, 81, 9, 16, 100];
+
+function calculaRaizQuadrada(arr){
+	let result = arr.map(function(arr){
+		return Math.sqrt(arr);
+	});
+	return result;
+}
+
+console.log(calculaRaizQuadrada(numeros));
+
+// saída
+//
+// [5, 9, 3, 4, 10]
+
+```
+
 ## Exercício 10 - E tem alguma diferença?
 Diga, em poucas palavras, qual a diferença entre os métodos auxiliares `forEach` e `map`.
+
+O método forEach, por si só, apenas percorre o array passado como entrada, sem necessariamente modificá-lo. Já o map, naturalmente, é utilizado para realizar modificações, mas sem alterar o array original.
 
 ## Exercício 11 - A pequena ovelha Dolly
 Utilizando o método auxiliar `forEach`, crie uma função `clonaObjeto` que recebe como parâmetro um objeto e cria uma cópia exata dela.
