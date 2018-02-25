@@ -20,7 +20,9 @@ function imprimeProduto(nome, preco) {
 }
 ```
 
-### Versão apenas com arrow function:
+### Resposta:
+
+#### Versão apenas com arrow function:
 
 ``` javascript
 
@@ -36,7 +38,7 @@ imprimeProduto("Batata", 2);
 
 ```
 
-### Versão com arrow function e template strings:
+#### Versão com arrow function e template strings:
 
 ``` javascript
 
@@ -79,6 +81,11 @@ itens.forEach((i) => console.log(i));
 ## Exercício 3 - Quem está na janela?
 Toda função declarada no escopo global possui o objeto `window` como valor do `this`. Por que acontece isso?
 
+### Resposta:
+
+Na maioria dos casos, o this é determinado pela maneira que a função é chamada. Porém, num escopo global, o `this` recebe o valor de `window`, o objeto global do JS.
+
+
 ## Exercício 4 - Vou lavar sua boca com sabão!
 Utilize as arrow funcions para deixar o código a seguir ainda menor.
 ``` javascript
@@ -89,9 +96,30 @@ let palavroes = [
     "Oftalmotorrinolaringologista"
 ];
 
-let tamanhos =  palavroes.map(function(palavrao){ return palavrao.length });
+let tamanhos =  palavroes.map(function(palavrao){return palavrao.length});
 
 console.log(tamanhos); // [ 22, 22, 44, 28 ]
+```
+
+### Resposta:
+
+``` javascript
+let palavroes = [
+    "Inconstitucionalíssimo",
+    "Otorrinolaringologista",
+    "Pneumoultramicroscopicossilicovulcanoconiose",
+    "Oftalmotorrinolaringologista"
+];
+
+let tamanhos =  palavroes.map((palavrao) => palavrao.length);
+
+console.log(tamanhos); 
+
+// saída:
+// 22
+// 22
+// 44
+// 28
 ```
 
 ## Exercício 5 - Tudo dentro do seu escopo
