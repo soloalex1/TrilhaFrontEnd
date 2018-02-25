@@ -20,6 +20,38 @@ function imprimeProduto(nome, preco) {
 }
 ```
 
+###Versão apenas com arrow function:
+
+``` javascript
+
+let imprimeProduto = (nome, preco) => {
+	return "Produto: " + nome + " | " + "Preço: " + preco;
+}
+
+imprimeProduto("Batata", 2);
+
+// saída:
+//
+// Produto: Batata | Preço: 2
+
+```
+
+
+###Versão com template strings:
+
+``` javascript
+
+let imprimeProduto = (nome, preco) => `Produto: ${nome} | Preço: ${preco}`;
+
+imprimeProduto("Chuchu", 12);
+
+// saída
+//
+// Produto: Chuchu | Preço: 12
+
+```
+
+
 ## Exercício 2 - Hora de usar as setas novamente
 Refatore o código a seguir para utilizar arrow functions:
 ``` javascript
