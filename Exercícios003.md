@@ -20,7 +20,7 @@ function imprimeProduto(nome, preco) {
 }
 ```
 
-###Versão apenas com arrow function:
+### Versão apenas com arrow function:
 
 ``` javascript
 
@@ -36,8 +36,7 @@ imprimeProduto("Batata", 2);
 
 ```
 
-
-###Versão com template strings:
+### Versão com arrow function e template strings:
 
 ``` javascript
 
@@ -51,7 +50,6 @@ imprimeProduto("Chuchu", 12);
 
 ```
 
-
 ## Exercício 2 - Hora de usar as setas novamente
 Refatore o código a seguir para utilizar arrow functions:
 ``` javascript
@@ -59,6 +57,23 @@ let itens = ['abacaxi', 'banana', 'maçã', 'laranja', 'limão'];
 itens.forEach(function(item) {
     console.log(item);
 })
+```
+
+### Resposta:
+
+``` javascript
+let itens = ['abacaxi', 'banana', 'maçã', 'laranja', 'limão'];
+
+itens.forEach((i) => console.log(i));
+
+// saída:
+//
+// abacaxi
+// banana
+// maçã
+// laranja
+// limão
+
 ```
 
 ## Exercício 3 - Quem está na janela?
