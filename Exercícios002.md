@@ -7,6 +7,27 @@ Escreva uma função chamada `somaFaturamento` que recebe uma lista de números 
 
 * Exemplo: somaFaturamento([1,2,3,4]) → 10
 
+
+### Resposta:
+
+``` javascript
+function somaFaturamento(arr){
+	let result = 0;
+	for(num of arr){
+		result += num;
+	}
+	return result;
+}
+
+somaFaturamento([1, 2, 3, 4, 5]);
+
+// saída:
+//
+// 15
+
+
+```
+
 ## Exercício 2 - Por quê não funciona?
 Um jovem programador tentou utilizar o laço de repetição `for...of` no objeto `Casa` na esperança de que o laço passasse por todas as propriedades deste objeto. No entanto, ele só recebeu o erro: `TypeError: Casa[Symbol.iterator] is not a function`. Por que não está funcionando?
 
