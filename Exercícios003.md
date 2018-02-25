@@ -139,3 +139,11 @@ var equipe = {
 
 equipe.imprimeNomes();
 ```
+### Resposta:
+
+``` javascript
+
+
+```
+
+
