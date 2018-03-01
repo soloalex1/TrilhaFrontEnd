@@ -12,6 +12,9 @@ Nestes exercícios iremos exercitar os métodos auxiliares para array:
 ## Exercício 1 - Par ou ímpar?
 Altere o código a seguir para utilizar o método `forEach` de modo que a saída permaneça a mesma.
 
+
+### Resposta:
+
 ``` javascript
 var numeros = [0, 1, 2, 3, 4, 5];
 
@@ -36,6 +39,9 @@ numeros.forEach(function(i){
 Utilizando o método `map`, escreva o método `dobrar` que recebe um array de números inteiros e retorna um array com todos os valores do array original dobrados.
 
 * Exemplo: dobrar([1,2,3]) → [2,4,6]
+
+
+### Resposta:
 
 ``` javascript
 var num = [0, 1, 2, 3, 4, 5];
@@ -76,6 +82,9 @@ Escreva o método `caps` que recebe um array de strings e retorna um outro array
 
 * Exemplo: caps(['oi', 'tudo', 'bem?']) → ['OI', 'TUDO', 'BEM?']
 
+
+### Resposta:
+
 ``` javascript
 
 function caps(words){
@@ -111,6 +120,8 @@ Utilize as funções auxiliares: `reduce` e `find`.
 Dada uma lista de objetos que contém o nome de um aluno e sua média final, crie o método 'aprovados' que recebe esta lista e retorna somente os alunos que foram aprovados.
 
 Para isto, utilize o método `filter`.
+
+### Resposta:
 
 ``` javascript
 var alunos = [
@@ -156,6 +167,25 @@ var lista = [
 
 * Exemplo: buscar('nome', 'Tânia', lista) → { nome: 'Tânia', sobrenome: 'Cardoso', idade: 65 }
 
+### Resposta:
+
+``` javascript
+function buscar(propriedade, valor, lista){
+	let result = lista.find(function(i){
+		return i.propriedade = valor;
+	});
+	console.log(result);
+}
+
+buscar('nome', 'Tânia', lista);
+
+// saída:
+//
+// Object { nome: "Tânia", sobrenome: "Cardoso", idade: 65, propriedade: "Tânia" }
+
+```
+
+
 ## Exercício 8 - Calculadora humana
 Crie uma função `calculaAreaTotal` que recebe um parâmetro:
 - dimensoes: objeto que possui as propriedades `altura` e `comprimento` que são números inteiros
@@ -174,12 +204,32 @@ var dimensoes = [
 
 * Exemplo: calculaAreaTotal(dimensoes) → 2709
 
+### Resposta:
+
+``` javascript
+function calculaAreaTotal(arr){
+	let calc = arr.map(function(i){
+		return (i.altura * i.comprimento);
+	});
+
+	let calcTotal = calc.reduce(function(sum, number){
+		return sum + number
+	}, 0);
+
+	return calcTotal;	
+}
+
+console.log(calculaAreaTotal(dimensoes)); //2709
+
+```
+
 ## Exercício 9 - Raízes quadradas
 Crie uma função chamada `calculaRaizesQuadradas` que recebe um array de números inteiros positivos e devolve um outro array com as raízes quadradas correspondentes de cada um dos itens.
 
 * para este exercício, assuma que a entrada terá somente números com raiz exata.
 * utilize a função Math.sqrt para calcular a raiz quadrada
 
+### Resposta:
 
 ``` javascript
 
@@ -229,3 +279,20 @@ var produtos = [
 
 * Exemplo: existeProdutosDatados(produtos, '2017-03-01') → true
 * existeProdutosDatados(produtos,'2016-01-01') → false
+
+### Resposta:
+
+``` javascript
+function existeProdutosDatados(produtos, dataReferencia){
+	let prod = produtos.find(function(i){
+		return i.dataValidade >= dataReferencia;
+	})
+	if(prod != undefined){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+existeProdutosDatados(produtos, '2017-03-01'); //true
+```
