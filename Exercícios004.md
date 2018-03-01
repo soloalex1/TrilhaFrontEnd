@@ -14,6 +14,9 @@ console.log(elemento)
 // <ul><li>leite<li><li>feijão<li><li>arroz<li><li>mandioca<li></ul>
 ```
 
+
+
+
 ## Exercício 2 - Maçaroca de Strings
 Implemente o método `criaMacaroca` que recebe como parâmetro uma lista de strings. O método deve retornar uma única string que é o resultado de todos os itens do array concatenados. É obrigatório a utilização de template string.
 
@@ -31,12 +34,38 @@ O método deve retornar uma única string com esses dados no seguinte formato:
 
 Lembre-se de respeitar as vírgulas e os espaços!
 
+### Resposta:
+
+``` javascript
+function montaEnderecoCompleto(rua, cidade, numero, cep){
+	console.log(`<${rua}>, <${numero}> - <${cidade}>, <${cep}>`);	
+}
+
+montaEnderecoCompleto("Rua 1", "Fortaleza", 100, 600000);
+
+// saída:
+//
+// <Rua 1>, <100> - <Fortaleza>, <600000>
+
+```
+
+
+
 ## Exercício 4 - Seja muito bem-vindo!
 Refatore o código a seguir para utilizar template strings.
 ``` javascript
 let nome = 'usuario';
 console.log('Bem-vindo ' + usuário + '!');
 ```
+
+### Resposta:
+
+``` javascript
+let nome = "usuário";
+console.log(`Bem-vindo ${nome}!`);   //Bem-vindo usuário!
+
+```
+
 
 ## Exercício 5 - Cálculo interpolado
 Faça a implementação da função 'soma' que recebe como parâmetro dois valores que devem ser somados. O resultado da soma deve ser exibido no console no seguinte formato:
@@ -46,3 +75,11 @@ Faça a implementação da função 'soma' que recebe como parâmetro dois valor
 Utilize template string para implementar este método.
 
 * Exemplo: soma(1,2) → 1 + 2 = 3
+
+``` javascript
+function soma(n1, n2){
+	console.log(`<${n1}> + <${n2}> = <${n1 + n2}>`);
+}
+
+soma(3, 5); //<3> + <5> = <8>
+```
