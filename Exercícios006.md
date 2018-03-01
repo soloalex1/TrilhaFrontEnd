@@ -61,7 +61,10 @@ Refatore o código a seguir para utilizar o operador `Spread` ao invés do méto
 const equipeMarketing = ['Joana', 'Marcela', 'Bruna'];
 const equipeComercial = ['Talita', 'Luisa', 'Vitória'];
 
-const timeCompleto = equipeMarketing.concat(equipeComercial);
+const timeCompleto = [
+  ...equipeMarketing,
+  ...equipeComercial
+];
 
 realizaBrainstorm(timeCompleto);
 ```
